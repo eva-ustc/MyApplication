@@ -31,6 +31,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPlusOrSubtract.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View view) {
+        // 如果有多个点击绑定时间,可在此处添加判断 if语句 或者 switch语句
+        if (view.getId()==R.id.num_PlusOrSubtract) {
+            Log.d(Tag ,"利用实现接口的方式绑定点击事件");
+        }
+    }
 
     public void oneOnClick(View view){
 //        Log.d(Tag,"white click...");
@@ -44,13 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view instanceof TextView) {
             String text = ((TextView) view).getText().toString();
             Log.d(Tag ,"text=="+text);
-        }
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (view.getId()==R.id.num_PlusOrSubtract) {
-            Log.d(Tag ,"利用实现接口的方式绑定点击事件");
         }
     }
 }
